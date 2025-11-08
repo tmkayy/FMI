@@ -9,6 +9,7 @@ import bg.sofia.uni.fmi.mjt.fittrack.workout.filter.WorkoutFilter;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -102,7 +103,7 @@ public class FitPlanner implements FitPlannerAPI{
             map.get(workout.getType()).add(workout);
         }
 
-        return Map.copyOf(map);
+        return Collections.unmodifiableMap(map);
     }
 
     @Override
@@ -110,7 +111,7 @@ public class FitPlanner implements FitPlannerAPI{
         ArrayList<Workout> workouts = new ArrayList<>(availableWorkouts);
         workouts.sort(new WorkoutByBurnedCaloriesDescThenByDifficultyDescComparator());
 
-        return  List.copyOf(workouts);
+        return  Collections.unmodifiableList(workouts);
     }
 
     @Override
@@ -118,7 +119,7 @@ public class FitPlanner implements FitPlannerAPI{
         ArrayList<Workout> workouts = new ArrayList<>(availableWorkouts);
         workouts.sort(new WorkoutByDifficultyComparator());
 
-        return  List.copyOf(workouts);
+        return  Collections.unmodifiableList(workouts);
     }
 
     @Override

@@ -35,6 +35,8 @@ public class HumorousErgenka extends GenericErgenka implements Ergenka {
 
     @Override
     public void reactToDate(DateEvent dateEvent) {
+        if (dateEvent == null)
+            return;
         int result = (humorLevel * 5) / dateEvent.getTensionLevel() + romanceLevel / 3;
         int bonus = 0;
         if (dateEvent.getDuration() >= 30 && dateEvent.getDuration() <= 90)

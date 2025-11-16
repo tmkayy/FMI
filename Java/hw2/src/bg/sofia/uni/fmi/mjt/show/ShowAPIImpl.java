@@ -9,9 +9,9 @@ public class ShowAPIImpl implements ShowAPI {
     private final Ergenka[] ergenkas;
     private final EliminationRule[] defaultEliminationRules;
 
-    public ShowAPIImpl(Ergenka[] ergenkas, EliminationRule[] defaultEliminationRules){
+    public ShowAPIImpl(Ergenka[] ergenkas, EliminationRule[] defaultEliminationRules) {
         this.ergenkas = ergenkas;
-        this.defaultEliminationRules  = defaultEliminationRules;
+        this.defaultEliminationRules = defaultEliminationRules;
     }
 
     @Override
@@ -21,6 +21,8 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void playRound(DateEvent dateEvent) {
+        if (dateEvent == null)
+            return;
         for (Ergenka ergenka : this.ergenkas) {
             organizeDate(ergenka, dateEvent);
         }
@@ -29,11 +31,11 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void eliminateErgenkas(EliminationRule[] eliminationRules) {
-        if(eliminationRules == null || eliminationRules.length == 0) {
+        if (eliminationRules == null || eliminationRules.length == 0) {
             for (EliminationRule er : defaultEliminationRules) {
                 er.eliminateErgenkas(ergenkas);
             }
-        }else{
+        } else {
             for (EliminationRule er : eliminationRules) {
                 er.eliminateErgenkas(ergenkas);
             }
@@ -42,6 +44,8 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void organizeDate(Ergenka ergenka, DateEvent dateEvent) {
+        if (ergenka == null || dateEvent == null)
+            return;
         ergenka.reactToDate(dateEvent);
     }
 }

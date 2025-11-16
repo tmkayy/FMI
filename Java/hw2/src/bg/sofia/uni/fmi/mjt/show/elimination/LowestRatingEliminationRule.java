@@ -7,6 +7,9 @@ public class LowestRatingEliminationRule implements EliminationRule {
 
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
+        if (ergenkas == null || ergenkas.length == 0) {
+            return ergenkas;
+        }
         int minRating = ergenkas[0].getRating();
         for (Ergenka ergenka : ergenkas) {
             if (ergenka.getRating() < minRating)

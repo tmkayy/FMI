@@ -16,21 +16,24 @@ public class PublicVoteEliminationRule implements EliminationRule {
 
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
+        if (ergenkas == null || ergenkas.length == 0) {
+            return ergenkas;
+        }
         int[] counts = new int[ergenkas.length];
         for (int i = 0; i < ergenkas.length; i++) {
-            for ( int j = 0; j < votes.length; j++) {
-                if (ergenkas[i].getName().equals(votes[j]))
+            for (String vote : votes) {
+                if (ergenkas[i].getName().equals(vote))
                     counts[i]++;
             }
         }
-        boolean eleminate = false;
+        boolean eliminate = false;
         for (int i = 0; i < votes.length; i++) {
             if (counts[i] > votes.length / 2) {
-                eleminate = true;
+                eliminate = true;
                 break;
             }
         }
-        if (!eleminate)
+        if (!eliminate)
             return ergenkas;
         else {
             Ergenka[] newErgenkas = new Ergenka[counts.length - 1];

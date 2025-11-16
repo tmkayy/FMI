@@ -9,7 +9,10 @@ public class DateEvent {
     private final int duration;
 
     public DateEvent(String location, int tensionLevel, int duration) {
-        this.location = location;
+        if (location == null)
+            this.location = "";
+        else
+            this.location = location;
         this.duration = duration;
         if (tensionLevel < TENSION_LEVEL_MIN) {
             this.tensionLevel = TENSION_LEVEL_MIN;

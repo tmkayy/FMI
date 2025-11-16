@@ -16,6 +16,10 @@ public class LowAttributeSumEliminationRule implements EliminationRule {
 
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
+        if (ergenkas == null || ergenkas.length == 0) {
+            return ergenkas;
+        }
+        
         int toRemove = 0;
         for (Ergenka ergenka : ergenkas) {
             if (ergenka.getHumorLevel() + ergenka.getRomanceLevel() < threshold)

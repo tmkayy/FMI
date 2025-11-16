@@ -40,8 +40,11 @@ public class HumorousErgenka extends GenericErgenka implements Ergenka {
         }
 
         int tension = dateEvent.getTensionLevel();
+        if (tension == 0) tension = 1;
 
-        int result = (humorLevel * 5) / tension + Math.floorDiv(romanceLevel, 3);
+        int humorPart = (humorLevel * 5) / tension;
+        int romancePart = Math.floorDiv(romanceLevel, 3);
+        int result = humorPart + romancePart;
 
         int bonus = 0;
         int duration = dateEvent.getDuration();

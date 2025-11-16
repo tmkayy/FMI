@@ -27,15 +27,18 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void playRound(DateEvent dateEvent) {
-        if (dateEvent == null) {
-            return;
+        DateEvent eventToUse = dateEvent;
+        if (eventToUse == null) {
+            eventToUse = new DateEvent("studio", 60, 5);
         }
+
         if (ergenkas == null) {
             ergenkas = new Ergenka[0];
             return;
         }
+
         for (Ergenka ergenka : this.ergenkas) {
-            organizeDate(ergenka, dateEvent);
+            organizeDate(ergenka, eventToUse);
         }
         eliminateErgenkas(defaultEliminationRules);
     }
@@ -58,7 +61,7 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void organizeDate(Ergenka ergenka, DateEvent dateEvent) {
-        if (ergenka == null) {
+        if (ergenka == null || dateEvent == null) {
             return;
         }
         ergenka.reactToDate(dateEvent);

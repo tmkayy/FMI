@@ -19,17 +19,19 @@ public class LowAttributeSumEliminationRule implements EliminationRule {
         if (ergenkas == null || ergenkas.length == 0) {
             return new Ergenka[0];
         }
-        
+
         int toRemove = 0;
         for (Ergenka ergenka : ergenkas) {
-            if (ergenka.getHumorLevel() + ergenka.getRomanceLevel() < threshold)
+            if (ergenka != null && ergenka.getHumorLevel() + ergenka.getRomanceLevel() < threshold) {
                 toRemove++;
+            }
         }
 
         Ergenka[] newErgenkas = new Ergenka[ergenkas.length - toRemove];
         int newErgenkaIndex = 0;
         for (int i = 0; i < ergenkas.length; i++) {
-            if (ergenkas[i].getHumorLevel() + ergenkas[i].getRomanceLevel() >= threshold) {
+            // Add null check
+            if (ergenkas[i] != null && ergenkas[i].getHumorLevel() + ergenkas[i].getRomanceLevel() >= threshold) {
                 newErgenkas[newErgenkaIndex++] = ergenkas[i];
             }
         }

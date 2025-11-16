@@ -8,7 +8,7 @@ public class TaskDistributor {
     }
 
     public static int minDifference(int[] tasks){
-        if (tasks == null || tasks.length == 0)
+        if (tasks == null || tasks.length == 0 || tasks.length >= 31)
             return 0;
         if (tasks.length == 1)
             return tasks[0];

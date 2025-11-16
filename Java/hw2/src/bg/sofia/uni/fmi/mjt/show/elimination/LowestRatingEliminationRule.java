@@ -4,16 +4,17 @@ import bg.sofia.uni.fmi.mjt.show.ergenka.Ergenka;
 
 public class LowestRatingEliminationRule implements EliminationRule {
 
-
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
         if (ergenkas == null || ergenkas.length == 0) {
             return new Ergenka[0];
         }
+
         int minRating = Integer.MAX_VALUE;
         for (Ergenka ergenka : ergenkas) {
-            if (ergenka.getRating() < minRating)
+            if (ergenka != null && ergenka.getRating() < minRating) {
                 minRating = ergenka.getRating();
+            }
         }
 
         if (minRating == Integer.MAX_VALUE) {
@@ -22,14 +23,16 @@ public class LowestRatingEliminationRule implements EliminationRule {
 
         int toRemove = 0;
         for (Ergenka ergenka : ergenkas) {
-            if (ergenka.getRating() == minRating)
+            if (ergenka != null && ergenka.getRating() == minRating) {
                 toRemove++;
+            }
         }
 
         Ergenka[] newErgenkas = new Ergenka[ergenkas.length - toRemove];
         int newErgenkaIndex = 0;
         for (int i = 0; i < ergenkas.length; i++) {
-            if(ergenkas[i].getRating() != minRating){
+            // Add null check
+            if (ergenkas[i] != null && ergenkas[i].getRating() != minRating) {
                 newErgenkas[newErgenkaIndex++] = ergenkas[i];
             }
         }

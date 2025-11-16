@@ -11,13 +11,12 @@ public class RomanticErgenka extends GenericErgenka implements Ergenka {
         this.favoriteDateLocation = favoriteDateLocation;
     }
 
-
     @Override
     public String getName() {
         return this.name;
     }
 
-    public String getfavoriteDateLocation() {
+    public String getFavoriteDateLocation() {
         return this.favoriteDateLocation;
     }
 
@@ -48,8 +47,11 @@ public class RomanticErgenka extends GenericErgenka implements Ergenka {
         }
 
         int tension = dateEvent.getTensionLevel();
+        if (tension == 0) tension = 1;
 
-        int result = (romanceLevel * 7) / tension + Math.floorDiv(humorLevel, 3);
+        int romancePart = (romanceLevel * 7) / tension;
+        int humorPart = Math.floorDiv(humorLevel, 3);
+        int result = romancePart + humorPart;
 
         int bonus = 0;
 

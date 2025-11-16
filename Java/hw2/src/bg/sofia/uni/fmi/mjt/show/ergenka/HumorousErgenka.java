@@ -2,20 +2,10 @@ package bg.sofia.uni.fmi.mjt.show.ergenka;
 
 import bg.sofia.uni.fmi.mjt.show.date.DateEvent;
 
-public class HumorousErgenka implements Ergenka {
-
-    private final String name;
-    private final short age;
-    private final int romanceLevel;
-    private final int humorLevel;
-    private int rating;
+public class HumorousErgenka extends GenericErgenka implements Ergenka {
 
     public HumorousErgenka(String name, short age, int romanceLevel, int humorLevel, int rating) {
-        this.name = name;
-        this.age = age;
-        this.romanceLevel = romanceLevel;
-        this.humorLevel = humorLevel;
-        this.rating = rating;
+        super(name, age, romanceLevel, humorLevel, rating);
     }
 
     @Override

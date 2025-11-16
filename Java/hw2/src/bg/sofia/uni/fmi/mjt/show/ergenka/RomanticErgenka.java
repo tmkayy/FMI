@@ -2,23 +2,15 @@ package bg.sofia.uni.fmi.mjt.show.ergenka;
 
 import bg.sofia.uni.fmi.mjt.show.date.DateEvent;
 
-public class RomanticErgenka implements Ergenka {
+public class RomanticErgenka extends GenericErgenka implements Ergenka {
 
-    private final String name;
-    private final short age;
-    private final int romanceLevel;
-    private final int humorLevel;
-    private int rating;
     private final String favoriteDateLocation;
 
     public RomanticErgenka(String name, short age, int romanceLevel, int humorLevel, int rating, String favoriteDateLocation) {
-        this.name = name;
-        this.age = age;
-        this.romanceLevel = romanceLevel;
-        this.humorLevel = humorLevel;
-        this.rating = rating;
+        super(name, age, romanceLevel, humorLevel, rating);
         this.favoriteDateLocation = favoriteDateLocation;
     }
+
 
     @Override
     public String getName() {
@@ -53,7 +45,7 @@ public class RomanticErgenka implements Ergenka {
     public void reactToDate(DateEvent dateEvent) {
         int result = (romanceLevel * 7) / dateEvent.getTensionLevel() + humorLevel / 3;
         int bonus = 0;
-        if (dateEvent.getLocation() == favoriteDateLocation)
+        if (dateEvent.getLocation().equals(this.favoriteDateLocation))
             bonus += 5;
         if (dateEvent.getDuration() < 30)
             bonus -= 3;

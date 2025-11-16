@@ -27,6 +27,7 @@ public class PublicVoteEliminationRule implements EliminationRule {
         for (int i = 0; i < votes.length; i++) {
             if (counts[i] > votes.length / 2) {
                 eleminate = true;
+                break;
             }
         }
         if (!eleminate)

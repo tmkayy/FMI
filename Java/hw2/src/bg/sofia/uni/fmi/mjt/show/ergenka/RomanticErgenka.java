@@ -43,16 +43,28 @@ public class RomanticErgenka extends GenericErgenka implements Ergenka {
 
     @Override
     public void reactToDate(DateEvent dateEvent) {
-        if (dateEvent == null)
+        if (dateEvent == null) {
             return;
-        int result = (romanceLevel * 7) / dateEvent.getTensionLevel() + humorLevel / 3;
+        }
+
+        int tension = dateEvent.getTensionLevel();
+
+        int result = (romanceLevel * 7) / tension + Math.floorDiv(humorLevel, 3);
+
         int bonus = 0;
-        if (dateEvent.getLocation().equals(this.favoriteDateLocation))
+
+        if (favoriteDateLocation != null && dateEvent.getLocation() != null &&
+                favoriteDateLocation.equalsIgnoreCase(dateEvent.getLocation())) {
             bonus += 5;
-        if (dateEvent.getDuration() < 30)
+        }
+
+        int duration = dateEvent.getDuration();
+        if (duration < 30) {
             bonus -= 3;
-        if (dateEvent.getDuration() > 120)
+        } else if (duration > 120) {
             bonus -= 2;
+        }
+
         rating += result + bonus;
     }
 }

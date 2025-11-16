@@ -8,12 +8,16 @@ public class LowestRatingEliminationRule implements EliminationRule {
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
         if (ergenkas == null || ergenkas.length == 0) {
-            return ergenkas;
+            return new Ergenka[0];
         }
-        int minRating = ergenkas[0].getRating();
+        int minRating = Integer.MAX_VALUE;
         for (Ergenka ergenka : ergenkas) {
             if (ergenka.getRating() < minRating)
                 minRating = ergenka.getRating();
+        }
+
+        if (minRating == Integer.MAX_VALUE) {
+            return new Ergenka[0];
         }
 
         int toRemove = 0;

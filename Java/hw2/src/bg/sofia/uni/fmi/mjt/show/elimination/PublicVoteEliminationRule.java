@@ -16,33 +16,39 @@ public class PublicVoteEliminationRule implements EliminationRule {
 
     @Override
     public Ergenka[] eliminateErgenkas(Ergenka[] ergenkas) {
-        if (ergenkas == null || ergenkas.length == 0) {
+        if (ergenkas == null || ergenkas.length == 0 || votes == null || votes.length == 0) {
             return ergenkas;
         }
+
         int[] counts = new int[ergenkas.length];
-        for (int i = 0; i < ergenkas.length; i++) {
-            for (String vote : votes) {
-                if (ergenkas[i].getName().equals(vote))
+        for (String vote : votes) {
+            for (int i = 0; i < ergenkas.length; i++) {
+                if (ergenkas[i].getName().equals(vote)) {
                     counts[i]++;
+                    break;
+                }
             }
         }
-        boolean eliminate = false;
-        for (int i = 0; i < votes.length; i++) {
+
+        int majorityIndex = -1;
+        for (int i = 0; i < counts.length; i++) {
             if (counts[i] > votes.length / 2) {
-                eliminate = true;
+                majorityIndex = i;
                 break;
             }
         }
-        if (!eliminate)
+
+        if (majorityIndex == -1) {
             return ergenkas;
-        else {
-            Ergenka[] newErgenkas = new Ergenka[counts.length - 1];
-            int newErgenkaIndex = 0;
-            for (int i = 1; i < counts.length; i++) {
-                if (counts[i] <= votes.length / 2)
-                    newErgenkas[newErgenkaIndex++] = ergenkas[i];
-            }
-            return newErgenkas;
         }
+
+        Ergenka[] newErgenkas = new Ergenka[ergenkas.length - 1];
+        int newIndex = 0;
+        for (int i = 0; i < ergenkas.length; i++) {
+            if (i != majorityIndex) {
+                newErgenkas[newIndex++] = ergenkas[i];
+            }
+        }
+        return newErgenkas;
     }
 }

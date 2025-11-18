@@ -36,7 +36,7 @@ public class HumorousErgenka extends GenericErgenka implements Ergenka {
     @Override
     public void reactToDate(DateEvent dateEvent) {
         if (dateEvent == null) {
-            return;
+            dateEvent = new DateEvent("", 5, 60);
         }
 
         int tension = dateEvent.getTensionLevel();

@@ -43,7 +43,7 @@ public class RomanticErgenka extends GenericErgenka implements Ergenka {
     @Override
     public void reactToDate(DateEvent dateEvent) {
         if (dateEvent == null) {
-            return;
+            dateEvent = new DateEvent("", 5, 60); // Default values
         }
 
         int tension = dateEvent.getTensionLevel();

@@ -11,7 +11,7 @@ public class ShowAPIImpl implements ShowAPI {
     private final EliminationRule[] defaultEliminationRules;
 
     public ShowAPIImpl(Ergenka[] ergenkas, EliminationRule[] defaultEliminationRules) {
-        this.ergenkas = ergenkas != null ? ergenkas : new Ergenka[0];
+        this.ergenkas = ergenkas;
 
         if (defaultEliminationRules == null || defaultEliminationRules.length == 0) {
             this.defaultEliminationRules = new EliminationRule[]{new LowestRatingEliminationRule()};
@@ -22,7 +22,7 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public Ergenka[] getErgenkas() {
-        return ergenkas != null ? ergenkas : new Ergenka[0];
+        return ergenkas;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class ShowAPIImpl implements ShowAPI {
 
     @Override
     public void organizeDate(Ergenka ergenka, DateEvent dateEvent) {
-        if (ergenka == null || dateEvent == null) {
+        if (ergenka == null) {
             return;
         }
         ergenka.reactToDate(dateEvent);

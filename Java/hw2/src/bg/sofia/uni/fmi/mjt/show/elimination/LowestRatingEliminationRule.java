@@ -21,21 +21,24 @@ public class LowestRatingEliminationRule implements EliminationRule {
             return new Ergenka[0];
         }
 
-        int toRemove = 0;
+        int countAboveMin = 0;
         for (Ergenka ergenka : ergenkas) {
-            if (ergenka != null && ergenka.getRating() == minRating) {
-                toRemove++;
+            if (ergenka != null && ergenka.getRating() > minRating) {
+                countAboveMin++;
             }
         }
 
-        Ergenka[] newErgenkas = new Ergenka[ergenkas.length - toRemove];
-        int newErgenkaIndex = 0;
-        for (int i = 0; i < ergenkas.length; i++) {
-            // Add null check
-            if (ergenkas[i] != null && ergenkas[i].getRating() != minRating) {
-                newErgenkas[newErgenkaIndex++] = ergenkas[i];
+        if (countAboveMin > 0) {
+            Ergenka[] result = new Ergenka[countAboveMin];
+            int index = 0;
+            for (Ergenka ergenka : ergenkas) {
+                if (ergenka != null && ergenka.getRating() > minRating) {
+                    result[index++] = ergenka;
+                }
             }
+            return result;
         }
-        return newErgenkas;
+
+        return new Ergenka[0];
     }
 }

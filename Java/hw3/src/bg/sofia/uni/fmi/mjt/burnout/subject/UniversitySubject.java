@@ -21,7 +21,7 @@ public record UniversitySubject(String name, int credits, int rating, Category c
         if (name == null || name.isBlank()){
             throw new IllegalArgumentException("Name cannot be null or blank");
         }
-        if (credits < 0){
+        if (credits <= 0){
             throw new IllegalArgumentException("Credits cannot be negative");
         }
         if (rating < RATING_LOWER_BOUND || rating > RATING_UPPER_BOUND){
@@ -30,7 +30,7 @@ public record UniversitySubject(String name, int credits, int rating, Category c
         if (category == null){
             throw new IllegalArgumentException("Category cannot be null");
         }
-        if (neededStudyTime < 0){
+        if (neededStudyTime <= 0){
             throw new IllegalArgumentException("Needed Study Time cannot be negative");
         }
     }

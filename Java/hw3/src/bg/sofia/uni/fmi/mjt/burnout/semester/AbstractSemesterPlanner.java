@@ -1,88 +1,89 @@
 package bg.sofia.uni.fmi.mjt.burnout.semester;
 
+import bg.sofia.uni.fmi.mjt.burnout.exception.CryToStudentsDepartmentException;
 import bg.sofia.uni.fmi.mjt.burnout.exception.DisappointmentException;
 import bg.sofia.uni.fmi.mjt.burnout.exception.InvalidSubjectRequirementsException;
 import bg.sofia.uni.fmi.mjt.burnout.plan.SemesterPlan;
+import bg.sofia.uni.fmi.mjt.burnout.subject.SubjectRequirement;
 import bg.sofia.uni.fmi.mjt.burnout.subject.UniversitySubject;
 
-
-public abstract sealed class AbstractSemesterPlanner implements SemesterPlannerAPI
-        permits ComputerScienceSemesterPlanner, SoftwareEngineeringSemesterPlanner {
-
+public abstract sealed class AbstractSemesterPlanner implements SemesterPlannerAPI permits ComputerScienceSemesterPlanner, SoftwareEngineeringSemesterPlanner {
     private static final int DAYS_PER_JAR = 5;
 
     @Override
-    public int calculateJarCount(UniversitySubject[] subjects, int maximumSlackTime, int semesterDuration) {
-        if(subjects == null){
-            throw new IllegalArgumentException("Subjects cannot be null");
-        }
-        if(maximumSlackTime < 0){
-            throw new IllegalArgumentException("Maximum slack time cannot be negative");
-        }
-        if(semesterDuration < 0){
-            throw new IllegalArgumentException("Semester duration cannot be negative");
+    public final UniversitySubject[] calculateSubjectList(SemesterPlan semesterPlan)
+            throws InvalidSubjectRequirementsException {
+        validatePlan(semesterPlan);
+        UniversitySubject[] subjects = semesterPlan.subjects();
+
+        sortSubjects(subjects);
+        UniversitySubject[] chosen = selectSubjects(semesterPlan, subjects);
+
+        if (!canCoverCredits(chosen, semesterPlan.minimalAmountOfCredits())) {
+            throw new CryToStudentsDepartmentException("Cannot cover credits.");
         }
 
-        double totalRest = 0;
+        return chosen;
+    }
+
+    @Override
+    public int calculateJarCount(UniversitySubject[] subjects, int maximumSlackTime, int semesterDuration) throws DisappointmentException {
+        if (subjects == null || subjects.length == 0) {
+            throw new IllegalArgumentException("Subjects can't be null or missing.");
+        }
+
+        if (maximumSlackTime <= 0) {
+            throw new IllegalArgumentException("Maximum slack time must be positive.");
+        }
+
+        if (semesterDuration <= 0) {
+            throw new IllegalArgumentException("Semester duration must be positive.");
+        }
+
+        int totalRestTime = 0;
         int totalStudyTime = 0;
+
         for (UniversitySubject subject : subjects) {
             totalStudyTime += subject.neededStudyTime();
-            totalRest += Math.ceil(subject.neededStudyTime() * subject.category().getRestCoefficient());
+            totalRestTime += (int) Math.ceil(subject.neededStudyTime() * subject.category().getRestCoefficient());
         }
 
-        if (totalRest > maximumSlackTime) {
-            throw new DisappointmentException("Maximum slack time exceeded");
+        if (totalRestTime > maximumSlackTime) {
+            throw new DisappointmentException("Grandma is disappointed in you.");
         }
 
-        int jarCount = totalStudyTime / DAYS_PER_JAR;
+        int totalTime = totalStudyTime + totalRestTime;
+        int jars = totalStudyTime / DAYS_PER_JAR;
 
-        if (semesterDuration > totalRest + totalStudyTime) {
-            jarCount *= 2;
-        }
-        return jarCount;
+        return totalTime > semesterDuration ? jars * 2 : jars;
     }
 
-    protected void checkSubjectRequirements(SemesterPlan semesterPlan) throws InvalidSubjectRequirementsException {
-        for (int i = 0; i < semesterPlan.subjectRequirements().length; i++) {
-            for (int j = i + 1; j < semesterPlan.subjectRequirements().length; j++) {
-                if(semesterPlan.subjectRequirements()[i].category().equals(semesterPlan.subjectRequirements()[j].category())){
-                    throw new InvalidSubjectRequirementsException("Repeating Subject Requirements");
+    protected void validatePlan(SemesterPlan semesterPlan) throws InvalidSubjectRequirementsException {
+        if (semesterPlan == null) {
+            throw new IllegalArgumentException("Semester plan cannot be null.");
+        }
+
+        SubjectRequirement[] requirements = semesterPlan.subjectRequirements();
+
+        for (int i = 0; i < requirements.length - 1; i++) {
+            for (int j = i + 1; j < requirements.length; j++) {
+                if (requirements[i].category().equals(requirements[j].category())) {
+                    throw new InvalidSubjectRequirementsException("There is a duplicate category in requirements.");
                 }
             }
         }
     }
 
-    protected void sortSubjectsByCreditsDescending(UniversitySubject[] subjects) {
-        if (subjects == null || subjects.length <= 1) {
-            return;
+    protected boolean canCoverCredits(UniversitySubject[] subjects, int neededCredits) {
+        int credits = 0;
+
+        for (UniversitySubject subject : subjects) {
+            credits += subject.credits();
         }
 
-        int n = subjects.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (subjects[j].credits() < subjects[j + 1].credits()) {
-                    UniversitySubject temp = subjects[j];
-                    subjects[j] = subjects[j + 1];
-                    subjects[j + 1] = temp;
-                }
-            }
-        }
+        return credits >= neededCredits;
     }
 
-    protected void sortSubjectsByReviewsDescending(UniversitySubject[] subjects) {
-        if (subjects == null || subjects.length <= 1) {
-            return;
-        }
-
-        int n = subjects.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (subjects[j].rating() < subjects[j + 1].rating()) {
-                    UniversitySubject temp = subjects[j];
-                    subjects[j] = subjects[j + 1];
-                    subjects[j + 1] = temp;
-                }
-            }
-        }
-    }
+    protected abstract void sortSubjects(UniversitySubject[] subjects);
+    protected abstract UniversitySubject[] selectSubjects(SemesterPlan plan, UniversitySubject[] subjects);
 }

@@ -20,7 +20,7 @@ public abstract class GenericWorkout {
     }
 
     public void setName(String name) {
-        if (name == null || name.isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
             throw new InvalidWorkoutException("Workout name is null or empty");
         }
         this.name = name;

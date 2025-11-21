@@ -3,7 +3,7 @@ package bg.sofia.uni.fmi.mjt.fittrack.workout;
 public final class StrengthWorkout extends GenericWorkout implements Workout {
     public StrengthWorkout(String name, int duration, int caloriesBurned, int difficulty) {
         super(name, duration, caloriesBurned, difficulty);
-        type = WorkoutType.CARDIO;
+        type = WorkoutType.STRENGTH;
     }
 
     @Override

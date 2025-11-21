@@ -11,24 +11,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class FitPlanner implements FitPlannerAPI{
+public class FitPlanner implements FitPlannerAPI {
     private Collection<Workout> availableWorkouts;
 
-    public FitPlanner(Collection<Workout> availableWorkouts){
+    public FitPlanner(Collection<Workout> availableWorkouts) {
         setAvailableWorkouts(availableWorkouts);
     }
 
-    public Collection<Workout> getAvailableWorkouts() {
-        return availableWorkouts;
-    }
-
     public void setAvailableWorkouts(Collection<Workout> availableWorkouts) {
-        if(availableWorkouts==null){
+        if (availableWorkouts == null) {
             throw new IllegalArgumentException("availableWorkouts is null");
         }
         this.availableWorkouts = List.copyOf(availableWorkouts);
@@ -36,18 +31,24 @@ public class FitPlanner implements FitPlannerAPI{
 
     @Override
     public List<Workout> findWorkoutsByFilters(List<WorkoutFilter> filters) {
-        if(filters==null){
+        if (filters == null) {
             throw new IllegalArgumentException("filters is null");
         }
-        Set<Workout> workouts = new HashSet<>();
-        for (WorkoutFilter filter : filters) {
-            for(Workout workout : getAvailableWorkouts()) {
-                if(filter.matches(workout)){
-                    workouts.add(workout);
+
+        List<Workout> result = new ArrayList<>();
+        for (Workout workout : availableWorkouts) {
+            boolean matchesAll = true;
+            for (WorkoutFilter filter : filters) {
+                if (!filter.matches(workout)) {
+                    matchesAll = false;
+                    break;
                 }
             }
+            if (matchesAll) {
+                result.add(workout);
+            }
         }
-        return new ArrayList<>(workouts);
+        return result;
     }
 
     @Override
@@ -61,32 +62,36 @@ public class FitPlanner implements FitPlannerAPI{
         }
 
         List<Workout> workoutList = new ArrayList<>(availableWorkouts);
+        int n = workoutList.size();
 
-        int[] dp = new int[totalMinutes + 1];
-        Workout[] lastWorkout = new Workout[totalMinutes + 1];
+        int[] maxCalories = new int[totalMinutes + 1];
+        boolean[][] selected = new boolean[totalMinutes + 1][n];
 
-        for (Workout workout : workoutList) {
+        for (int i = 0; i < n; i++) {
+            Workout workout = workoutList.get(i);
             int calories = workout.getCaloriesBurned();
             int duration = workout.getDuration();
 
             for (int j = totalMinutes; j >= duration; j--) {
-                if (dp[j] < dp[j - duration] + calories) {
-                    dp[j] = dp[j - duration] + calories;
-                    lastWorkout[j] = workout;
+                if (maxCalories[j] < maxCalories[j - duration] + calories) {
+                    maxCalories[j] = maxCalories[j - duration] + calories;
+                    if (j - duration >= 0) {
+                        System.arraycopy(selected[j - duration], 0, selected[j], 0, n);
+                    }
+                    selected[j][i] = true;
                 }
             }
         }
 
-        if (dp[totalMinutes] == 0) {
+        if (maxCalories[totalMinutes] == 0) {
             throw new OptimalPlanImpossibleException("No workout combination fits within the given time limit");
         }
 
         List<Workout> result = new ArrayList<>();
-        int remainingTime = totalMinutes;
-        while (remainingTime > 0 && lastWorkout[remainingTime] != null) {
-            Workout workout = lastWorkout[remainingTime];
-            result.add(workout);
-            remainingTime -= workout.getDuration();
+        for (int i = 0; i < n; i++) {
+            if (selected[totalMinutes][i]) {
+                result.add(workoutList.get(i));
+            }
         }
 
         result.sort(new WorkoutByBurnedCaloriesDescThenByDifficultyDescComparator());
@@ -96,11 +101,15 @@ public class FitPlanner implements FitPlannerAPI{
     @Override
     public Map<WorkoutType, List<Workout>> getWorkoutsGroupedByType() {
         Map<WorkoutType, List<Workout>> map = new HashMap<>();
-        for(WorkoutType workoutType : WorkoutType.values()){
-            map.put(workoutType, new ArrayList<>());
-        }
-        for(Workout workout : availableWorkouts){
-            map.get(workout.getType()).add(workout);
+
+        for (Workout workout : availableWorkouts) {
+            WorkoutType type = workout.getType();
+            List<Workout> workoutsOfType = map.get(type);
+            if (workoutsOfType == null) {
+                workoutsOfType = new ArrayList<>();
+                map.put(type, workoutsOfType);
+            }
+            workoutsOfType.add(workout);
         }
 
         return Collections.unmodifiableMap(map);
@@ -108,22 +117,20 @@ public class FitPlanner implements FitPlannerAPI{
 
     @Override
     public List<Workout> getWorkoutsSortedByCalories() {
-        ArrayList<Workout> workouts = new ArrayList<>(availableWorkouts);
-        workouts.sort(new WorkoutByBurnedCaloriesDescThenByDifficultyDescComparator());
-
-        return  Collections.unmodifiableList(workouts);
+        List<Workout> sorted = new ArrayList<>(availableWorkouts);
+        sorted.sort(new WorkoutByBurnedCaloriesDescThenByDifficultyDescComparator());
+        return Collections.unmodifiableList(sorted);
     }
 
     @Override
     public List<Workout> getWorkoutsSortedByDifficulty() {
-        ArrayList<Workout> workouts = new ArrayList<>(availableWorkouts);
-        workouts.sort(new WorkoutByDifficultyComparator());
-
-        return  Collections.unmodifiableList(workouts);
+        List<Workout> sorted = new ArrayList<>(availableWorkouts);
+        sorted.sort(new WorkoutByDifficultyComparator());
+        return Collections.unmodifiableList(sorted);
     }
 
     @Override
     public Set<Workout> getUnmodifiableWorkoutSet() {
-        return Set.copyOf(new HashSet<>(availableWorkouts));
+        return Set.copyOf(availableWorkouts);
     }
 }

@@ -53,7 +53,8 @@ public class EventBusImpl implements EventBus {
 
         List<Subscriber<?>> eventSubscribers = subscribers.get(eventType);
         if (eventSubscribers == null || !eventSubscribers.remove(subscriber)) {
-            throw new MissingSubscriptionException("Subscriber is not subscribed to the event type: " + eventType.getName());
+            throw new MissingSubscriptionException("Subscriber is not subscribed to the event type: "
+                + eventType.getName());
         }
     }
 

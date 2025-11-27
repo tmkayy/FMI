@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|solutionrelative:week8\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|solutionrelative:week8\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{639C2D1C-596C-4C5A-B0B0-A77EF6BD714C}|week8\\week8.vcxproj|solutionrelative:week8\\praktikum2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\test.cpp",
+              "RelativeDocumentMoniker": "week8\\test.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\test.cpp",
+              "RelativeToolTip": "week8\\test.cpp",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAIwFcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T20:13:06.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "praktikum2.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum2.cpp",
+              "RelativeDocumentMoniker": "week8\\praktikum2.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum2.cpp",
+              "RelativeToolTip": "week8\\praktikum2.cpp",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-26T12:36:56.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "praktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum.cpp",
+              "RelativeDocumentMoniker": "week8\\praktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week8\\week8\\praktikum.cpp",
+              "RelativeToolTip": "week8\\praktikum.cpp",
+              "ViewState": "AgIAADwAAAAAAAAAAAAcwEwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-26T11:41:28.758Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

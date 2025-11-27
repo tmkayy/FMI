@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB80191-B076-4C9F-B7E7-DCF5626EDBCE}|week3.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5DB80191-B076-4C9F-B7E7-DCF5626EDBCE}|week3.vcxproj|solutionrelative:praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB80191-B076-4C9F-B7E7-DCF5626EDBCE}|week3.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5DB80191-B076-4C9F-B7E7-DCF5626EDBCE}|week3.vcxproj|solutionrelative:seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "praktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\praktikum.cpp",
+              "RelativeDocumentMoniker": "praktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\praktikum.cpp",
+              "RelativeToolTip": "praktikum.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-07T15:44:18.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "seminar.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\seminar.cpp",
+              "RelativeDocumentMoniker": "seminar.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week3\\seminar.cpp",
+              "RelativeToolTip": "seminar.cpp",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAQwKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-05T08:17:31.128Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

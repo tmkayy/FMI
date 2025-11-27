@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5703E403-27E8-419E-8127-1156E4F3B977}|week1.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\hw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5703E403-27E8-419E-8127-1156E4F3B977}|week1.vcxproj|solutionrelative:hw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5703E403-27E8-419E-8127-1156E4F3B977}|week1.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5703E403-27E8-419E-8127-1156E4F3B977}|week1.vcxproj|solutionrelative:praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "praktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\praktikum.cpp",
+              "RelativeDocumentMoniker": "praktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\praktikum.cpp",
+              "RelativeToolTip": "praktikum.cpp",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAAAAYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T08:19:37.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hw.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\hw.cpp",
+              "RelativeDocumentMoniker": "hw.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week1\\hw.cpp",
+              "RelativeToolTip": "hw.cpp",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAuwFIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-18T21:52:06.116Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

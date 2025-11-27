@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\Desktop\\uni\\week5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F7A60D-183B-41BF-8E92-F68C6FA2120D}|week5\\week5.vcxproj|C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\parktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B1F7A60D-183B-41BF-8E92-F68C6FA2120D}|week5\\week5.vcxproj|solutionrelative:week5\\parktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1F7A60D-183B-41BF-8E92-F68C6FA2120D}|week5\\week5.vcxproj|C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B1F7A60D-183B-41BF-8E92-F68C6FA2120D}|week5\\week5.vcxproj|solutionrelative:week5\\seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "seminar.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\seminar.cpp",
+              "RelativeDocumentMoniker": "week5\\seminar.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\seminar.cpp",
+              "RelativeToolTip": "week5\\seminar.cpp",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T14:32:51.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "parktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\parktikum.cpp",
+              "RelativeDocumentMoniker": "week5\\parktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\uni\\week5\\week5\\parktikum.cpp",
+              "RelativeToolTip": "week5\\parktikum.cpp",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAYwCIBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-05T12:13:11.626Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

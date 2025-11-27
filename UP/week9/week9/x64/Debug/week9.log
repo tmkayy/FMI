@@ -1,0 +1,4 @@
+﻿  praktikum.cpp
+C:\Users\storm\OneDrive\Desktop\uni\week9\week9\praktikum.cpp(92,12): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\storm\OneDrive\Desktop\uni\week9\week9\praktikum.cpp(99,18): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  week9.vcxproj -> C:\Users\storm\OneDrive\Desktop\uni\week9\x64\Debug\week9.exe

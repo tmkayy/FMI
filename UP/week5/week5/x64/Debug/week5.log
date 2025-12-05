@@ -1,0 +1,3 @@
+﻿  parktikum.cpp
+C:\Users\storm\Desktop\uni\week5\week5\parktikum.cpp(80,20): warning C4018: '<=': signed/unsigned mismatch
+  week5.vcxproj -> C:\Users\storm\Desktop\uni\week5\x64\Debug\week5.exe

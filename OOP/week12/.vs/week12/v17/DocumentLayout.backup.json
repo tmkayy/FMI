@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\Stack.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|solutionrelative:Stack.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|solutionrelative:MyPair.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyVectop.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|solutionrelative:MyVectop.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3DF33458-FBF6-4FE8-B8C1-487FE8BC6990}|week12.vcxproj|solutionrelative:MyPair.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stack.hpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\Stack.hpp",
+              "RelativeDocumentMoniker": "Stack.hpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\Stack.hpp",
+              "RelativeToolTip": "Stack.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-14T08:35:02.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyVectop.hpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyVectop.hpp",
+              "RelativeDocumentMoniker": "MyVectop.hpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyVectop.hpp",
+              "RelativeToolTip": "MyVectop.hpp",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAAIwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-14T08:30:26.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyPair.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.cpp",
+              "RelativeDocumentMoniker": "MyPair.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.cpp",
+              "RelativeToolTip": "MyPair.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-14T08:24:32.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyPair.hpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.hpp",
+              "RelativeDocumentMoniker": "MyPair.hpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week12\\MyPair.hpp",
+              "RelativeToolTip": "MyPair.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-14T08:16:11.116Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

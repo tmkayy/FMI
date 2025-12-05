@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\storm\OneDrive\Desktop\uni2\week7\main.cpp(1,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\storm\OneDrive\Desktop\uni2\week7\main.cpp(2,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  week7.vcxproj -> C:\Users\storm\OneDrive\Desktop\uni2\week7\x64\Debug\week7.exe

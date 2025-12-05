@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\hw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:hw.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:nums.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\prakt1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:prakt1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\sem1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:sem1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:nums1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums2.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4796E674-5506-495D-83C2-4B50B94518AA}|week2.vcxproj|solutionrelative:nums2.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hw.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\hw.cpp",
+              "RelativeDocumentMoniker": "hw.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\hw.cpp",
+              "RelativeToolTip": "hw.cpp",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-04T20:14:39.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "nums.txt",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums.txt",
+              "RelativeDocumentMoniker": "nums.txt",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums.txt",
+              "RelativeToolTip": "nums.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-26T09:29:33.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "nums2.txt",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums2.txt",
+              "RelativeDocumentMoniker": "nums2.txt",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums2.txt",
+              "RelativeToolTip": "nums2.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-26T08:58:00.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "nums1.txt",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums1.txt",
+              "RelativeDocumentMoniker": "nums1.txt",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\nums1.txt",
+              "RelativeToolTip": "nums1.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-26T08:57:48.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "prakt1.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\prakt1.cpp",
+              "RelativeDocumentMoniker": "prakt1.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\prakt1.cpp",
+              "RelativeToolTip": "prakt1.cpp",
+              "ViewState": "AgIAADEAAAAAAAAAAAAuwEEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-26T08:49:24.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "sem1.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\sem1.cpp",
+              "RelativeDocumentMoniker": "sem1.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni2\\week2\\sem1.cpp",
+              "RelativeToolTip": "sem1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-24T10:59:23.479Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

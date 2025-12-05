@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\Desktop\\uni\\week6\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C9B01C3-5E6F-459A-8137-1B7B4003386A}|week6\\week6.vcxproj|C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4C9B01C3-5E6F-459A-8137-1B7B4003386A}|week6\\week6.vcxproj|solutionrelative:week6\\seminar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C9B01C3-5E6F-459A-8137-1B7B4003386A}|week6\\week6.vcxproj|C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4C9B01C3-5E6F-459A-8137-1B7B4003386A}|week6\\week6.vcxproj|solutionrelative:week6\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "seminar.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\seminar.cpp",
+              "RelativeDocumentMoniker": "week6\\seminar.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\seminar.cpp",
+              "RelativeToolTip": "week6\\seminar.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-12T14:16:48.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "praktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\praktikum.cpp",
+              "RelativeDocumentMoniker": "week6\\praktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\Desktop\\uni\\week6\\week6\\praktikum.cpp",
+              "RelativeToolTip": "week6\\praktikum.cpp",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAANgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-12T11:41:35.861Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

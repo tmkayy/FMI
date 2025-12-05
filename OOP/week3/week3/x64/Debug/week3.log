@@ -1,0 +1,9 @@
+﻿  seminar.cpp
+C:\Users\storm\OneDrive\Desktop\uni2\week3\seminar.cpp(162,6): error C2373: 'nameLen': redefinition; different type modifiers
+      C:\Users\storm\OneDrive\Desktop\uni2\week3\seminar.cpp(146,12):
+      see declaration of 'nameLen'
+  
+C:\Users\storm\OneDrive\Desktop\uni2\week3\seminar.cpp(164,10): error C2086: 'Student st': redefinition
+      C:\Users\storm\OneDrive\Desktop\uni2\week3\seminar.cpp(145,10):
+      see declaration of 'st'
+  

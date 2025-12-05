@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week11\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1765E4-3B38-4CD2-8AA9-E16929290743}|week11.vcxproj|C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week11\\praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FD1765E4-3B38-4CD2-8AA9-E16929290743}|week11.vcxproj|solutionrelative:praktikum.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "praktikum.cpp",
+              "DocumentMoniker": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week11\\praktikum.cpp",
+              "RelativeDocumentMoniker": "praktikum.cpp",
+              "ToolTip": "C:\\Users\\storm\\OneDrive\\Desktop\\uni\\week11\\praktikum.cpp",
+              "RelativeToolTip": "praktikum.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-07T11:36:19.892Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+﻿  praktikum.cpp
+C:\Users\storm\OneDrive\Desktop\uni2\week1\praktikum.cpp(150,15): warning C4805: '==': unsafe mix of type 'int' and type 'bool' in operation
+C:\Users\storm\OneDrive\Desktop\uni2\week1\praktikum.cpp(150,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\storm\OneDrive\Desktop\uni2\week1\praktikum.cpp(100,1): warning C4715: 'susi::createStudent': not all control paths return a value
+  week1.vcxproj -> C:\Users\storm\OneDrive\Desktop\uni2\week1\x64\Debug\week1.exe

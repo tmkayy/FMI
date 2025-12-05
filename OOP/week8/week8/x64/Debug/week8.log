@@ -1,0 +1,4 @@
+﻿  seminar.cpp
+C:\Users\storm\OneDrive\Desktop\uni2\week8\seminar.cpp(34,13): warning C4101: 'ex': unreferenced local variable
+C:\Users\storm\OneDrive\Desktop\uni2\week8\seminar.cpp(37,16): warning C4101: 'ex': unreferenced local variable
+  week8.vcxproj -> C:\Users\storm\OneDrive\Desktop\uni2\week8\x64\Debug\week8.exe

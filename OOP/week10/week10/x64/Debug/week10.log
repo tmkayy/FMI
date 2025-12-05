@@ -1,0 +1,9 @@
+﻿  MyString.cpp
+C:\Users\storm\OneDrive\Desktop\uni2\week10\MyString.cpp(77,34): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\storm\OneDrive\Desktop\uni2\week10\MyString.cpp(158,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\storm\OneDrive\Desktop\uni2\week10\MyString.cpp(187,35): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  StudentTicket.cpp
+  Ticket.cpp
+  Generating Code...
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\storm\OneDrive\Desktop\uni2\week10\x64\Debug\week10.exe : fatal error LNK1120: 1 unresolved externals

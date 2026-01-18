@@ -52,26 +52,17 @@ public class InMemoryPlaylistRepository implements PlaylistRepository {
     public int likeSong(String playlistName, String songTitle, String artistName)
         throws PlaylistNotFoundException, SongNotFoundException {
 
-        Map<Song, Integer> playlist = playlists.get(playlistName);
-        if (playlist == null) {
-            throw new PlaylistNotFoundException("Playlist " + playlistName + " does not exist");
-        }
-
-        Song songToFind = new Song(songTitle, artistName, 1); // Duration is irrelevant for searching
-        Integer likes = playlist.get(songToFind);
-        if (likes == null) {
-            throw new SongNotFoundException(
-                "Song " + songTitle + " by " + artistName + " does not exist in playlist " + playlistName
-            );
-        }
-
-        int newLikes = likes + 1;
-        playlist.put(songToFind, newLikes);
-        return newLikes;
+        return modifySongLikes(playlistName, songTitle, artistName, true);
     }
 
     @Override
     public int unlikeSong(String playlistName, String songTitle, String artistName)
+        throws PlaylistNotFoundException, SongNotFoundException {
+
+        return modifySongLikes(playlistName, songTitle, artistName, false);
+    }
+
+    private int modifySongLikes(String playlistName, String songTitle, String artistName, boolean increment)
         throws PlaylistNotFoundException, SongNotFoundException {
 
         Map<Song, Integer> playlist = playlists.get(playlistName);
@@ -79,17 +70,26 @@ public class InMemoryPlaylistRepository implements PlaylistRepository {
             throw new PlaylistNotFoundException("Playlist " + playlistName + " does not exist");
         }
 
-        Song songToFind = new Song(songTitle, artistName, 1);
-        Integer likes = playlist.get(songToFind);
-        if (likes == null) {
+        Song songToFind = findSongInPlaylist(playlist, songTitle, artistName);
+        if (songToFind == null) {
             throw new SongNotFoundException(
                 "Song " + songTitle + " by " + artistName + " does not exist in playlist " + playlistName
             );
         }
 
-        int newLikes = Math.max(0, likes - 1);
+        Integer currentLikes = playlist.get(songToFind);
+        int newLikes = increment ? currentLikes + 1 : Math.max(0, currentLikes - 1);
         playlist.put(songToFind, newLikes);
         return newLikes;
+    }
+
+    private Song findSongInPlaylist(Map<Song, Integer> playlist, String songTitle, String artistName) {
+        for (Song song : playlist.keySet()) {
+            if (song.title().equals(songTitle) && song.artist().equals(artistName)) {
+                return song;
+            }
+        }
+        return null;
     }
 
     @Override

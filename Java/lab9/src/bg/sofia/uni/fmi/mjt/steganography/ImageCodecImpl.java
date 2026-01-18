@@ -14,25 +14,21 @@ import java.util.List;
 
 public class ImageCodecImpl implements ImageCodec {
     private final SteganographyAlgorithm algorithm;
-    private final TaskManager taskManager;
 
     public ImageCodecImpl() {
         this.algorithm = new SteganographyAlgorithm();
-        this.taskManager = new TaskManager();
     }
 
     @Override
     public void embedPNGImages(String coverSourceDirectory, String secretSourceDirectory, String outputDirectory) {
         DirectoryManager.createDirectoryIfNotExists(outputDirectory);
 
-        try {
-            // Load images
+        try (TaskManager taskManager = new TaskManager()) {
             List<ImagePair> imagePairs = ImageLoader.loadImagePairs(
                 coverSourceDirectory,
                 secretSourceDirectory
             );
 
-            // Process images in parallel
             List<ProcessedImage> processedImages = taskManager.processInParallel(
                 imagePairs,
                 pair -> {
@@ -41,7 +37,6 @@ public class ImageCodecImpl implements ImageCodec {
                 }
             );
 
-            // Save processed images
             ImageSaver.saveImages(processedImages, outputDirectory);
 
         } catch (Exception e) {
@@ -53,11 +48,9 @@ public class ImageCodecImpl implements ImageCodec {
     public void extractPNGImages(String sourceDirectory, String outputDirectory) {
         DirectoryManager.createDirectoryIfNotExists(outputDirectory);
 
-        try {
-            // Load stego images
+        try (TaskManager taskManager = new TaskManager()) {
             List<StegoImage> stegoImages = ImageLoader.loadStegoImages(sourceDirectory);
 
-            // Extract images in parallel
             List<ProcessedImage> extractedImages = taskManager.processInParallel(
                 stegoImages,
                 stego -> {
@@ -66,7 +59,6 @@ public class ImageCodecImpl implements ImageCodec {
                 }
             );
 
-            // Save extracted images
             ImageSaver.saveImages(extractedImages, outputDirectory);
 
         } catch (Exception e) {

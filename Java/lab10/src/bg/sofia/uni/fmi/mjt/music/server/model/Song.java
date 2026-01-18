@@ -24,4 +24,14 @@ public record Song(String title, String artist, int duration) {
     public int hashCode() {
         return Objects.hash(title, artist);
     }
+
+    public String escapeJson(String input) {
+        return input.replace("\\", "\\\\")
+            .replace("\"", "\\\"")
+            .replace("\b", "\\b")
+            .replace("\f", "\\f")
+            .replace("\n", "\\n")
+            .replace("\r", "\\r")
+            .replace("\t", "\\t");
+    }
 }

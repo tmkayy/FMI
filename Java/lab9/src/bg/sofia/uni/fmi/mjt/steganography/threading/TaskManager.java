@@ -9,7 +9,7 @@ import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class TaskManager {
+public class TaskManager implements AutoCloseable {
     private final ExecutorService executorService;
 
     public TaskManager() {
@@ -39,7 +39,8 @@ public class TaskManager {
             .collect(Collectors.toList());
     }
 
-    public void shutdown() {
+    @Override
+    public void close() {
         executorService.shutdown();
     }
 }

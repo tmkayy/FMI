@@ -1,0 +1,83 @@
+USE movies
+
+--1
+SELECT ms.NAME FROM MOVIESTAR AS ms
+WHERE ms.NAME IN (SELECT me.NAME FROM MOVIEEXEC AS me
+ WHERE me.NETWORTH>10000000) AND GENDER ='F'
+
+--2
+SELECT ms.NAME FROM MOVIESTAR AS ms
+WHERE ms.NAME NOT IN (SELECT me.NAME FROM MOVIEEXEC AS me)
+
+--3
+SELECT m.TITLE FROM MOVIE AS m
+WHERE m.LENGTH > (SELECT s.LENGTH FROM MOVIE AS s
+WHERE TITLE = 'Star Wars')
+
+--4
+SELECT m.TITLE, me.NAME FROM MOVIE AS m
+JOIN MOVIEEXEC AS me ON me.CERT# = M.PRODUCERC#
+WHERE me.NETWORTH > (SELECT me2.NETWORTH FROM MOVIEEXEC AS me2
+WHERE me2.NAME='Merv Griffin')
+
+--1
+USE pc
+SELECT DISTINCT p.maker FROM pc
+JOIN PRODUCT AS p ON pc.model = p.model
+WHERE pc.speed>500
+
+--2
+SELECT pr.code, pr.model, pr.price FROM printer AS pr
+WHERE pr.price = (SELECT TOP 1 price FROM printer ORDER BY price DESC)
+
+--3
+SELECT * FROM laptop AS l
+WHERE l.speed < ALL (SELECT pc.speed FROM pc)
+
+--4
+SELECT TOP 1 p.model, prod.price FROM product AS p
+JOIN (SELECT pc.price, pc.model FROM pc
+UNION (SELECT l.price, l.model FROM laptop AS l)
+UNION (SELECT pr.price, pr.model FROM printer AS pr)) AS prod ON prod.model=p.model
+ORDER BY prod.price DESC
+
+--5
+SELECT TOP 1 p.maker FROM product AS p
+JOIN printer AS pr ON p.model = pr.model
+WHERE pr.color = 'y'
+ORDER BY pr.price ASC
+
+--6
+SELECT DISTINCT p.maker FROM product AS p
+JOIN pc ON pc.model=p.model
+WHERE pc.ram=(SELECT TOP 1 ram FROM pc
+ORDER BY ram ASC, speed DESC)
+
+--1
+USE ships
+SELECT TOP 1 c.COUNTRY FROM CLASSES AS c
+ORDER BY c.NUMGUNS DESC
+
+--2
+SELECT DISTINCT s.CLASS FROM SHIPS AS s
+WHERE s.NAME IN (SELECT o.SHIP FROM BATTLES AS b
+JOIN OUTCOMES AS o ON b.NAME = o.BATTLE
+WHERE o.RESULT = 'sunk')
+
+--3 ???
+SELECT s.NAME, s.CLASS FROM SHIPS AS s
+JOIN CLASSES AS c ON c.CLASS = s.CLASS
+WHERE c.BORE>=16
+
+--4
+SELECT b.NAME FROM BATTLES AS b
+JOIN OUTCOMES AS o ON o.BATTLE = b.NAME
+JOIN SHIPS AS s ON s.NAME = o.SHIP
+WHERE s.CLASS = 'Kongo'
+
+--5
+SELECT s.CLASS,s.NAME FROM SHIPS AS s
+JOIN CLASSES AS c ON c.CLASS = s.CLASS
+WHERE c.NUMGUNS>=ALL(SELECT c2.NUMGUNS FROM CLASSES AS c2
+JOIN SHIPS AS s2 ON c2.CLASS = s2.CLASS
+WHERE c2.BORE = c.BORE AND s2.NAME <> s.NAME)

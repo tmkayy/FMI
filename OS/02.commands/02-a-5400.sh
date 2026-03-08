@@ -1,3 +1,3 @@
 #Изведете всички обикновени ("regular") файлове, които /etc и нейните преки поддиректории съдържат
 
-find /etc -maxdepth 1 -type f
+find /etc -maxdepth 2 -type f

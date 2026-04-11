@@ -11,4 +11,4 @@ while IFS=: read -r user homedir; do
     elif [[ ! -w "$homedir" ]]; then
         echo "$user cannot write in his homedir: $homedir"
     fi
-done < <(cut -d ':' -f1 -f6 /etc/passwd)
+done < <(cut -d ':' -f1,6 /etc/passwd)

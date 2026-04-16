@@ -1,0 +1,13 @@
+sem s1; s1.init(-N+1)
+
+process P
+    p1
+    repeat N times:
+        startQ
+    s1.wait()
+    p2
+
+process Q
+    q1
+    q2
+    s1.signal()

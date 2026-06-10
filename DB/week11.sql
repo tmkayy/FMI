@@ -1,0 +1,81 @@
+USE Flights
+
+--1
+CREATE VIEW v_zad1
+(AGENCY, AIRLINE_CODE, CUSTOMERS)
+AS
+SELECT AGENCY, AIRLINE_CODE, COUNT(*) FROM Booking
+GROUP BY AIRLINE_CODE, AGENCY
+
+--2
+CREATE VIEW v_zad2
+(AGENCY_NAME, MOST_LOYAL_CUSTOMER)
+AS
+SELECT a.NAME, (c.FNAME +' ' + c.LNAME) FROM Agency AS a
+LEFT JOIN Booking AS b ON b.AGENCY=a.NAME
+JOIN Customer AS c ON c.ID = b.CUSTOMER_ID
+GROUP BY a.NAME, c.FNAME, c.LNAME
+HAVING COUNT(*) = (
+    SELECT MAX(cnt) FROM (
+        SELECT COUNT(*) AS cnt FROM Booking b2
+        WHERE b2.AGENCY = a.NAME
+        GROUP BY b2.CUSTOMER_ID
+    ) AS sub
+)
+
+--3
+CREATE VIEW v_zad3
+AS
+SELECT * FROM Agency
+WHERE CITY='Sofia'
+WITH CHECK OPTION
+
+--4
+CREATE VIEW v_zad4
+AS
+SELECT * FROM Agency
+WHERE PHONE IS NULL
+WITH CHECK OPTION
+
+--5
+INSERT INTO v_zad3
+VALUES('T1 Tour', 'Bulgaria', 'Sofia','+359');
+INSERT INTO v_zad4
+VALUES('T2 Tour', 'Bulgaria', 'Sofia',null);
+INSERT INTO v_zad3
+VALUES('T3 Tour', 'Bulgaria', 'Varna','+359'); --fail
+INSERT INTO v_zad4
+VALUES('T4 Tour', 'Bulgaria', 'Varna',null);
+INSERT INTO v_zad4
+VALUES('T4 Tour', 'Bulgaria', 'Sofia','+359'); --fail
+
+--6
+
+--7
+DROP VIEW v_zad1, v_zad2, v_zad3, v_zad4
+
+
+--8
+USE pc
+CREATE UNIQUE NONCLUSTERED INDEX idx_product
+ON product(model)
+
+--9
+USE ships
+CREATE UNIQUE NONCLUSTERED INDEX idx_class
+ON CLASSES(CLASS)
+
+CREATE UNIQUE NONCLUSTERED INDEX idx_ships
+ON SHIPS(NAME)
+
+CREATE UNIQUE NONCLUSTERED INDEX idx_battles
+ON BATTLES(NAME)
+
+CREATE UNIQUE NONCLUSTERED INDEX idx_outcomes
+ON OUTCOMES(SHIP, BATTLE)
+
+--10
+USE pc
+DROP INDEX idx_product ON product
+USE ships
+DROP INDEX idx_class ON CLASSES, idx_ships ON SHIPS, idx_battles ON BATTLES, idx_outcomes ON OUTCOMES
